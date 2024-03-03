@@ -18,6 +18,7 @@ import {
   cilSpeedometer,
   cilStar,
   cilUser,
+  cilLockLocked
 } from '@coreui/icons'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 
@@ -59,6 +60,12 @@ const _nav = [
     name: 'Chỉnh sửa hỗ trợ',
     to: '/management/support-link',
     icon: <CIcon icon={cilNotes} customClassName="nav-icon" />,
+  },
+  {
+    component: CNavItem,
+    name: 'Mã rút tiền người dùng',
+    to: '/management/set-withdraw-password-user',
+    icon: <CIcon icon={cilLockLocked} customClassName="nav-icon" />,
   },
   // {
   //   component: CNavItem,

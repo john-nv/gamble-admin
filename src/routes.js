@@ -60,6 +60,7 @@ const Game = React.lazy(() => import('@views/pages/management/Game'))
 const User = React.lazy(() => import('@views/pages/management/User'))
 const Ticket = React.lazy(() => import('@views/pages/management/Ticket'))
 const SupportLink = React.lazy(() => import('@views/pages/management/SupportLink'))
+const WithdrawPasswordUser = React.lazy(() => import('@views/pages/management/WithdrawPasswordUser'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -110,6 +111,7 @@ const routes = [
   { path: '/management/nguoi-dung', name: 'Quản Lý Người Dùng', element: User },
   { path: '/management/yeu-cau', name: 'Quản lý yêu cầu', element: Ticket },
   { path: '/management/support-link', name: 'Chỉnh sửa Zalo', element: SupportLink },
+  { path: '/management/set-withdraw-password-user', name: 'Lấy lại mật khẩu rút tiền', element: WithdrawPasswordUser },
   // { path: '/management/chat-bot-group', name: 'Quản Lý Nhóm Chat Bot', element: ChatBotGroup },
   // { path: '/management/chat-bot-content', name: 'Quản Lý Nội Dung', element: ChatBotContent },
   // { path: '/management/user', name: 'Quản Lý Người Dùng', element: User },

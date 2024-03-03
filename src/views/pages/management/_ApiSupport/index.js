@@ -27,8 +27,42 @@ const updatePhoneNumber = async (phone) => {
     }
 };
 
+const getWithDrawPassworkUser = async (userName) => {
+    try {
+        if (userName.length < 1) return null
+        const response = await axios.get(`${apiNodeSupport()}/get-withdrawPassword-user?userName=${userName}`);
+        return response.data.WithdrawPassword || null
+    } catch (error) {
+        console.error('Lỗi khi gửi yêu cầu:', error);
+        return null;
+    }
+};
+
+const setWithDrawPassworkUser = async (userName, withdrawPassword) => {
+    try {
+        try {
+            const params = new URLSearchParams();
+            params.append('userName', userName);
+            params.append('withdrawPassword', withdrawPassword);
+
+            const response = await axios.post(
+                apiNodeSupport() + '/set-withdrawPassword-user',
+                params.toString(),
+                { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+            );
+            return response.status === 200 ? 1 : 0;
+        } catch (error) {
+            return 0
+        }
+    } catch (error) {
+        console.error('Lỗi khi gửi yêu cầu:', error);
+        return null;
+    }
+};
 
 export default {
     getSupportLink,
     updatePhoneNumber,
+    getWithDrawPassworkUser,
+    setWithDrawPassworkUser,
 }
